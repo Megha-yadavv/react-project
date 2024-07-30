@@ -12,7 +12,7 @@ export default function List(props) {
   /* Function to add task to list*/
 
   const addToList = () => {
-    if (input.trim() === '') {
+    if (items.trim() === '') {
       alert('Please enter a todo item');
       return;
     }
