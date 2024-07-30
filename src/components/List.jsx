@@ -12,13 +12,11 @@ export default function List(props) {
   /* Function to add task to list*/
 
   const addToList = () => {
-    if (items.trim() === '') {
-      alert('Please enter a todo item');
-      return;
-    }
+    if (items.trim()) {
     setLists([...lists, { task: items, completed: false }]);
     setOriginalLists([...lists, { task: items, completed: false }]);
     setItems("");
+  }
   };
 
   /* Function to search task in list */
