@@ -11,26 +11,34 @@ export default function List(props) {
 
   /* Function to add task to list*/
 
-  const addToList = () => {
+    const addToList = () => {
     const trimmedItems = items.trim();
-  if (trimmedItems) {
-    // Add the task to the lists
-    setLists([...lists, { task: trimmedItems, completed: false }]);
-    setOriginalLists([...lists, { task: trimmedItems, completed: false }]);
-    setItems(""); // Clear the input field
-  }
+    if (trimmedItems) {
+      const updatedLists = [...lists, { task: trimmedItems, completed: false }];
+      setLists(updatedLists);
+      setOriginalLists(updatedLists);
+      setItems(""); // Clear the input field
+    }
   };
 
-  /* Function to search task in list */
-
+  // Function to search task in list
   const searchTask = () => {
-    let searchItem = items.toLowerCase();
-    let tempList = [...lists];
-    let filterTask = tempList.filter((task) => task.task.toLowerCase() == searchItem);
-    setLists(filterTask);
-    setItems("");
+    const searchItem = items.trim().toLowerCase();
+    if (searchItem) {
+      const filteredTasks = originalLists.filter(task =>
+        task.task.toLowerCase() === searchItem
+      );
+      setLists(filteredTasks);
+    } else {
+      setLists(originalLists);
+    }
+    setItems(""); // Clear the input field
   };
 
+  // Function to return to original list after search
+  const returnToOriginal = () => {
+    setLists(originalLists);
+  };
   /* Function to return to original list after search */
 
   const returnToOriginal = () => {
