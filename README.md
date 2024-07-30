@@ -10,7 +10,7 @@ This is a simple To-Do List application built with React. It allows users to add
 - **Search Tasks**: Users can search for tasks by typing in the search bar.
 - **Responsive Design**: The app is designed to be responsive and works on both desktop and mobile devices.
 
-##Explanation of the implementation
+## Explanation of the implementation
   
 - Components
 The application is composed of two primary components: List and TaskList.
@@ -42,7 +42,7 @@ editFromList: Sets the component to editing mode for the task with the specified
 saveEdit: Saves the edited task by updating the task in the list with the new value from currentTask. It then exits editing mode.
 
 
-##Technologies Used
+## Technologies Used
 
 
 - **React**: Frontend library for building the user interface.
