@@ -12,6 +12,10 @@ export default function List(props) {
   /* Function to add task to list*/
 
   const addToList = () => {
+    if (input.trim() === '') {
+      alert('Please enter a todo item');
+      return;
+    }
     setLists([...lists, { task: items, completed: false }]);
     setOriginalLists([...lists, { task: items, completed: false }]);
     setItems("");
