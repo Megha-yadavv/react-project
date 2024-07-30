@@ -36,9 +36,7 @@ export default function List(props) {
   };
 
   // Function to return to original list after search
-  const returnToOriginal = () => {
-    setLists(originalLists);
-  };
+
   /* Function to return to original list after search */
 
   const returnToOriginal = () => {
