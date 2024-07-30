@@ -1,13 +1,62 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# To-Do List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple To-Do List application built with React. It allows users to add, complete, delete, and search tasks. The app also supports deployment on GitHub Pages.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Add Tasks**: Users can add new tasks to the list.
+- **Complete Tasks**: Users can mark tasks as completed by clicking the checkbox.
+- **Delete Tasks**: Users can remove tasks from the list.
+- **Search Tasks**: Users can search for tasks by typing in the search bar.
+- **Responsive Design**: The app is designed to be responsive and works on both desktop and mobile devices.
 
-### `npm start`
+  <--------------------------------------------------------------------Explanation of the implementation----------------------------------------------------------------------->
+  
+- Components
+The application is composed of two primary components: List and TaskList.
+
+1. List Component
+Purpose: The List component manages the overall state of the application, handles adding new tasks, and performs task searching.
+
+State Management:
+
+items: A string that holds the current input value from the user when adding a new task.
+lists: An array of task objects, where each task has the properties task (description) and completed (boolean indicating if the task is done).
+Key Functions:
+
+addToList: Adds a new task to the lists array. It creates a new task object with the description from items and a default completed status of false. After adding the task, it clears the items input field.
+searchTask: Filters tasks based on the search input provided by the user. It updates the lists array to show only tasks that match the search term. This function is called on every input change in the search bar.
+
+2. TaskList Component
+Purpose: The TaskList component handles displaying tasks, marking them as completed, editing, and deleting tasks.
+
+State Management:
+
+isEditing: An integer that tracks which task is currently being edited. If no task is being edited, it's null.
+currentTask: A string that holds the value of the task being edited.
+Key Functions:
+
+completeTask: Toggles the completed status of a task. It creates a new list where the specified task's completed status is updated.
+deleteFromList: Removes a task from the list by filtering out the task with the specified index.
+editFromList: Sets the component to editing mode for the task with the specified index and initializes the currentTask state with the task's current value.
+saveEdit: Saves the edited task by updating the task in the list with the new value from currentTask. It then exits editing mode.
+
+
+<--------------------------------------------------------------------- Technologies Used----------------------------------------------------------------------------------->
+
+
+- **React**: Frontend library for building the user interface.
+- **JavaScript (ES6+)**: Programming language used for the logic.
+- **GitHub Pages**: For deploying the application.
+
+  <-------------------------------------------------------------- Installation and deployment ------------------------------------------------------------------------------->
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Megha-yadavv/react-project.git
+   cd react-project
+
+2.`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -15,59 +64,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To deploy the app to GitHub Pages, follow these steps:
 
-### `npm run build`
+1.Install gh-pages:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm install gh-pages --save-dev`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.Update package.json:
+Add the following fields to your package.json:
 
-### `npm run eject`
+`"homepage": "https://Megha-yadavv.github.io/react-project",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Deploy the App:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-
+`npm run deploy`
