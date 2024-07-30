@@ -35,7 +35,6 @@ export default function List(props) {
     setItems(""); // Clear the input field
   };
 
-  // Function to return to original list after search
 
   /* Function to return to original list after search */
 
