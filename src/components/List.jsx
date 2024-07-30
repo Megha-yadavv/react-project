@@ -12,10 +12,12 @@ export default function List(props) {
   /* Function to add task to list*/
 
   const addToList = () => {
-    if (items.trim()) {
-    setLists([...lists, { task: items, completed: false }]);
-    setOriginalLists([...lists, { task: items, completed: false }]);
-    setItems("");
+    const trimmedItems = items.trim();
+  if (trimmedItems) {
+    // Add the task to the lists
+    setLists([...lists, { task: trimmedItems, completed: false }]);
+    setOriginalLists([...lists, { task: trimmedItems, completed: false }]);
+    setItems(""); // Clear the input field
   }
   };
 
